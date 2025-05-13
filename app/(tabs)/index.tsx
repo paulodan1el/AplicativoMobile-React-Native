@@ -27,6 +27,7 @@ export default function Index() {
 
 return (
     <View style={styles.container}>
+    <Text>Estou fazendo teste</Text>
         <View style={styles.ImageContainer}>
             <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
         </View>
