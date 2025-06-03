@@ -43,7 +43,7 @@ export default function BuscaCEP() {
       {endereco.logradouro !== '' && (
         <View style={styles.result}>
           <Text>Logradouro: {endereco.logradouro}</Text>
-          <Text>Bairro: {endereco.bairro}</Text>
+          <Text>Bairro: {endereco.bairro}</Text>W
           <Text>Cidade: {endereco.localidade}</Text>
           <Text>Estado: {endereco.uf}</Text>
         </View>
