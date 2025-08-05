@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       paddingHorizontal: 20,
-      backgroundColor: '#45936c',
+      backgroundColor: '#0d214f',
     },
     text: {
       textAlign: 'center',

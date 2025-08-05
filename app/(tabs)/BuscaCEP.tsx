@@ -1,13 +1,12 @@
 import React from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import { useBuscaCep } from '@/hooks/useBuscaCep'; // Importe o hook
+import { useBuscaCep } from '@/hooks/useBuscaCep';
 
 export default function BuscaCEP() {
   const { cep, setCep, endereco, buscarCEP } = useBuscaCep();
 
-  // Função para formatar CEP com hífen após 5 números
   function formatCep(value: string) {
-    let onlyNumbers = value.replace(/\D/g, ''); // remove tudo que não for número
+    let onlyNumbers = value.replace(/\D/g, '');
     if (onlyNumbers.length > 8) {
       onlyNumbers = onlyNumbers.slice(0, 8);
     }
@@ -17,7 +16,6 @@ export default function BuscaCEP() {
     return onlyNumbers;
   }
 
-  // Função chamada no onChangeText que formata e atualiza o estado
   function handleChange(text: string) {
     const formatted = formatCep(text);
     setCep(formatted);
@@ -25,27 +23,28 @@ export default function BuscaCEP() {
 
   return (
     <View style={styles.container}>
-      <Text>Consulte seu CEP</Text>
+      <Text style={styles.text}>Consulte seu CEP</Text>
 
       <TextInput
         style={styles.textInput}
         value={cep}
-        onChangeText={handleChange}  // usa a função com formatação
+        onChangeText={handleChange}
         placeholder="Digite o CEP"
+        placeholderTextColor="white" 
         keyboardType="numeric"
-        maxLength={9} // 8 números + 1 hífen
+        maxLength={9}
       />
 
-      <Text>{cep}</Text>
+      <Text style={styles.text}>{cep}</Text>
 
       <Button title="Buscar" onPress={buscarCEP} />
 
       {endereco.logradouro !== '' && (
         <View style={styles.result}>
-          <Text>Logradouro: {endereco.logradouro}</Text>
-          <Text>Bairro: {endereco.bairro}</Text>W
-          <Text>Cidade: {endereco.localidade}</Text>
-          <Text>Estado: {endereco.uf}</Text>
+          <Text style={styles.text}>Logradouro: {endereco.logradouro}</Text>
+          <Text style={styles.text}>Bairro: {endereco.bairro}</Text>
+          <Text style={styles.text}>Cidade: {endereco.localidade}</Text>
+          <Text style={styles.text}>Estado: {endereco.uf}</Text>
         </View>
       )}
     </View>
@@ -55,7 +54,7 @@ export default function BuscaCEP() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#0d214f',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 16,
@@ -63,9 +62,10 @@ const styles = StyleSheet.create({
   textInput: {
     width: '80%',
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: 'white',
     padding: 8,
     marginVertical: 10,
+    color: 'white', 
   },
   result: {
     marginTop: 20,
@@ -73,5 +73,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'gray',
     borderRadius: 8,
+  },
+  text: {
+    color: 'white', 
   },
 });

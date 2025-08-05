@@ -6,14 +6,14 @@ export default function TabLayout() {
   return (
     <Tabs
     screenOptions={{
-      tabBarActiveTintColor: '#9acc77',
+      tabBarActiveTintColor: 'white',
       headerStyle: {
-        backgroundColor: '#334f53',
+        backgroundColor: 'black',
       },
       headerShadowVisible: false,
       headerTintColor: 'white',
       tabBarStyle: {
-        backgroundColor: '#334f53',
+        backgroundColor: 'black',
       },
     }}
   >
@@ -23,7 +23,7 @@ export default function TabLayout() {
           title: 'Início',
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: '#45936c'
+            backgroundColor: 'black'
           },
           tabBarIcon: ({ color, focused,}) => (
             <Ionicons name={focused ? 'home-sharp' : 'home-outline'} color={color} size={24}  />
@@ -36,7 +36,7 @@ export default function TabLayout() {
           title: 'Sobre nós',
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: '#45936c'
+            backgroundColor: 'black'
           },
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? 'information-circle' : 'information-circle-outline'} color={color} size={24} />
@@ -50,10 +50,24 @@ export default function TabLayout() {
           title: 'Pedidos',
           headerTitleAlign: 'center',
           headerStyle: {
-            backgroundColor: '#45936c'
+            backgroundColor: 'black'
           },
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? 'cart' : 'cart-outline'} color={color} size={24} />
+          ),
+        }}
+      />
+
+<Tabs.Screen
+        name="BuscaCEP"
+        options={{
+          title: 'Buscar CEP',
+          headerTitleAlign: 'center',
+          headerStyle: {
+            backgroundColor: 'black'
+          },
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'search' : 'search-outline'} color={color} size={24} />
           ),
         }}
       />
